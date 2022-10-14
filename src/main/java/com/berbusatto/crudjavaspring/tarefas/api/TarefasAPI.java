@@ -13,7 +13,6 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/tarefas", produces = MediaType.APPLICATION_JSON_VALUE)
 public class TarefasAPI {
-
     @Autowired // injetando instancia da facade
     private TarefasFacade tarefasFacade;
 
@@ -21,7 +20,6 @@ public class TarefasAPI {
     @ResponseBody
     public TarefaDTO criar(@RequestBody TarefaDTO tarefaDTO){
         return tarefasFacade.criar(tarefaDTO);
-
     }
 
     @PutMapping("/{tarefaId}")
@@ -41,7 +39,4 @@ public class TarefasAPI {
     public String deletar(@PathVariable("tarefaId") Long tarefaId){
         return tarefasFacade.delete(tarefaId);
     }
-
-
-
 }
